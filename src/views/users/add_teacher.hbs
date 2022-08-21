@@ -1,0 +1,323 @@
+<div class="container p-4"> 
+ <div class="p-3 mb-2 bg-secondary text-white" style="--bs-bg-opacity: 0.9;">
+  <p class="text-start"><a href="/user_profile" class="btn btn-success">Volver</a></p>    
+  <p>
+    <a class="btn btn-success" 
+      data-bs-toggle="collapse" 
+      href="#collapseExample" 
+      role="button" 
+      aria-expanded="false" 
+      aria-controls="collapseExample">
+        Registrar para certificado sencillo y completo
+    </a>
+    <a class="btn btn-success" 
+       data-bs-toggle="collapse" 
+       href="#collapseExample1" 
+       role="button" 
+       aria-expanded="false" 
+       aria-controls="collapseExample">
+        Gestionar usuarios gestion fet
+    </a>
+ </p>
+ 
+   <div class="collapse" id="collapseExample">
+      <div class="card card-body text-white bg-secondary mb-3">
+     <label for="exampleFormControlInput1" class="form-label">Periodo A</label>
+    <form "/administrador/addteacher" method="POST" class="row g-3">
+      <div class="col-md-4">
+        <label for="validationDefault01" class="form-label">nombre completo</label>
+        <input type="text" class="form-control" name="nombres" placeholder="nombre" style="text-transform:uppercase" autofocus required/>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">correo institucional</label>
+         <input type="email" class="form-control" name="correo_electronico" placeholder="ejemplo@fet.edu.co"  required/>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">identificación</label>
+        <input type="number" class="form-control" name="CC" placeholder="CC"  required/>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Ciudad Expedición</label>
+        <input type="Text" class="form-control" name="ciudad_exp" placeholder="Neiva"  required/>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Departamento Expedición</label>
+        <input type="Text" class="form-control" name="departamento_exp" placeholder="Huila"  required/>
+      </div>
+      <div class="col-md-6">
+         <label>Programa</label><br>
+         <select name="id_programa" class="btn btn-success ">
+          {{#each programa}} 
+         <option value="{{id_programa}}" selected>{{programa}}</option> 
+          {{/each}}
+        </select> 
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">numero de contrato individual</label>
+        <input type="text" class="form-control" name="contratoindividual" placeholder="CT XXXXXXXXX" required/>
+      </div>
+      <div class="col-md-3">
+        <label>Nivel académico</label>
+        <select name="id_Nivel_Aca" class="btn btn-success ">
+            {{#each nivel_academico}} 
+        <option value="{{id_Nivel_Aca}}" selected>{{Academico}}</option> 
+           {{/each}}
+        </select>  
+      </div>
+      <div class="col-md-3">
+         <label>Tipo de contrato</label><br>
+        <select name="id_Contrato" class="btn btn-success ">
+            {{#each tipo_contrato}} 
+        <option value="{{id_Contrato}}" selected>{{Tipo_Contrato}}</option> 
+            {{/each}}
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label>labor</label><br>
+        <select name="id_labor" class="btn btn-success ">
+            {{#each labor}} 
+        <option value="{{id_labor}}" selected>{{labor}}</option> 
+            {{/each}}
+        </select> 
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Fecha de inicio</label>
+        <input type="date" class="form-control" name="fecha_inicio"  min="2022-01-01" max="2022-07-01"  required/>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Fecha final</label>
+        <input type="date" class="form-control" name="fecha_final"  min="2022-01-01" max="2022-09-01"  required/> 
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Salario</label>
+         <input type="number" class="form-control" name="salario" placeholder="salario"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Horas Semanales</label>
+         <input type="number" class="form-control" name="horassemanales" placeholder="#horas semanales"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Dedicacion Docente</label>
+         <input type="number" class="form-control" name="dedicaciondocente" placeholder="#horas para docente"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Dedicacion investigación</label>
+         <input type="number" class="form-control" name="dedicacioninvestigacion" placeholder="#horas para investigacion"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 1</label>
+         <input type="text" class="form-control" name="curso1" placeholder="curso 1"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 2</label>
+         <input type="text" class="form-control" name="curso2" placeholder="curso 2"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 3</label>
+         <input type="text" class="form-control" name="curso3" placeholder="curso 3"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 4</label>
+         <input type="text" class="form-control" name="curso4" placeholder="curso 4"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 5</label>
+         <input type="text" class="form-control" name="curso5" placeholder="curso 5"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 6</label>
+         <input type="text" class="form-control" name="curso6" placeholder="curso 6"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 7</label>
+         <input type="text" class="form-control" name="curso7" placeholder="curso 7"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 8</label>
+         <input type="text" class="form-control" name="curso8" placeholder="curso 8"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 9</label>
+         <input type="text" class="form-control" name="curso9" placeholder="curso 9"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 10</label>
+         <input type="text" class="form-control" name="curso10" placeholder="curso 10"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 11</label>
+         <input type="text" class="form-control" name="curso11" placeholder="curso 11"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 12</label>
+         <input type="text" class="form-control" name="curso12" placeholder="curso 12"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 13</label>
+         <input type="text" class="form-control" name="curso13" placeholder="curso 13"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 14</label>
+         <input type="text" class="form-control" name="curso14" placeholder="curso 14"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 15</label>
+         <input type="text" class="form-control" name="curso15" placeholder="curso 15" />
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 16</label>
+         <input type="text" class="form-control" name="curso16" placeholder="curso 16"/>
+      </div>
+      <label for="exampleFormControlInput1" class="form-label">Periodo B</label>
+      <div class="col-md-3">
+         <label class="form-label">Horas Semanales</label>
+         <input type="number" class="form-control" name="horassemanalesB" placeholder="#horas semanales"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Dedicación Docente</label>
+         <input type="number" class="form-control" name="dedicaciondocenteB" placeholder="#horas para docente"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Dedicacion Investigación</label>
+         <input type="number" class="form-control" name="dedicacioninvestigacionB" placeholder="#horas para docente"  required/>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Fecha de inicio</label>
+        <input type="date" class="form-control" name="fecha_inicioB"  min="2022-08-01" max="2022-12-31"  required/>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Fecha final</label>
+        <input type="date" class="form-control" name="fecha_finalB"  min="2022-08-01" max="2022-12-31"  required/> 
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Numero de contrato laboral</label>
+         <input type="text" class="form-control" name="contratolaboralB" placeholder="CT XXXXXX"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 1</label>
+         <input type="text" class="form-control" name="curso1B" placeholder="curso 1"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 2</label>
+         <input type="text" class="form-control" name="curso2B" placeholder="curso 2"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 3</label>
+         <input type="text" class="form-control" name="curso3B" placeholder="curso 3"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 4</label>
+         <input type="text" class="form-control" name="curso4B" placeholder="curso 4"  required/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 5</label>
+         <input type="text" class="form-control" name="curso5B" placeholder="curso 5"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 6</label>
+         <input type="text" class="form-control" name="curso6B" placeholder="curso 6"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 7</label>
+         <input type="text" class="form-control" name="curso7B" placeholder="curso 7"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 8</label>
+         <input type="text" class="form-control" name="curso8B" placeholder="curso 8"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 9</label>
+         <input type="text" class="form-control" name="curso9B" placeholder="curso 9"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 10</label>
+         <input type="text" class="form-control" name="curso10B" placeholder="curso 10"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 11</label>
+         <input type="text" class="form-control" name="curso11B" placeholder="curso 11"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 12</label>
+         <input type="text" class="form-control" name="curso12B" placeholder="curso 12"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 13</label>
+         <input type="text" class="form-control" name="curso13B" placeholder="curso 13"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 14</label>
+         <input type="text" class="form-control" name="curso14B" placeholder="curso 14"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 15</label>
+         <input type="text" class="form-control" name="curso15B" placeholder="curso 15"/>
+      </div>
+      <div class="col-md-3">
+         <label class="form-label">Curso 16</label>
+         <input type="text" class="form-control" name="curso16B" placeholder="curso 16"/>
+      </div>
+      <div class="col-12">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Aceptar Términos
+        </label>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-success" type="submit">Enviar</button>
+      </div>
+    </form> 
+      </div>
+    </div>
+    
+    <div class="collapse" id="collapseExample1">
+      <div class="card card-body text-white bg-secondary mb-3">
+         <div class="table-responsive-sm">
+         <table class="table text-white">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">CC</th>
+              <th scope="col">Acción</th>
+            </tr>
+           </thead>
+          <tbody>
+            {{#each usuariosdocentes}}
+            <tr>
+              <th scope="row">{{id_usuario}}</th>
+              <td>{{usuario}}</td>
+              <td>{{CC}}</td>
+              <td>
+                 <!-- Delete Button modal -->
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteemployed{{id_usuario}}">
+                    Eliminar
+                  </button>
+                  <!--Delete Modal -->
+                  <div class="modal fade" id="deleteemployed{{id_usuario}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-success text-white" style="--bs-bg-opacity: 0.9;">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuario</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          está seguro de quitar de la lista a  {{usuario}}
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <a class="btn btn-danger" href="/administrador/eliminar_usuario/{{id_usuario}}" role="button">Eliminar</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>  
+       </div>
+      </div>
+    </div>
+ </div>
+</div>

@@ -1,0 +1,88 @@
+.index {
+    width: 100vw;
+    height: 100vh;
+}
+
+.masterhead {
+    color: white;
+    min-height: 30rem;
+    width: 100%;
+    height: 100%;
+    padding-top: 8rem;
+    background-image: url('../img/uni1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.masterhead h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.masterhead img {
+  border: 2px;
+  padding: 10px;
+  border-radius: 25px;
+  position: relative;
+  animation: movimiento 1s;
+  animation-delay: 1s;
+}
+
+@keyframes movimiento {
+  from {left: 0px;}
+  to {left: 50px;}
+}
+
+.warning {
+    background-image: url('../img/uni1.jpg');
+    padding: 10rem;
+    display: flow-root;
+    flex-direction: column;
+}
+
+.warning img {
+    width: 100%;
+}
+
+.warning p {
+    font: small-caps bold 1.2rem sans-serif;
+    text-align: center;
+}
+
+
+
+.cards1:hover{
+ text-shadow: none !important;
+ box-sizing: border-box !important;
+ cursor: pointer !important;
+ transition: all 0.3s ease !important;
+ -webkit-transform: scale(1.1) !important;
+ -ms-transform:  scale(1.1) !important;
+ transform: scale(1.1) !important;
+ z-index: 2;
+}
+
+
+body {
+     /* Ruta relativa o completa a la imagen */
+     background-image: url("../img/uni.jpg");
+     /* Centramos el fondo horizontal y verticalmente */
+     background-position: center center;
+     /* El fonde no se repite */
+     background-repeat: no-repeat;
+     /* Fijamos la imagen a la ventana para que no supere el alto de la ventana */
+     background-attachment: fixed;
+     /* El fonde se re-escala automáticamente */
+     background-size: cover;
+     /* Color de fondo si la imagen no se encuentra o mientras se está cargando */
+     background-color: #FFF;
+     /* Fuente para el texto */
+     text-align: center;
+     color: #000;
+     font-family: "Times New Roman", Times, serif;
+}
+

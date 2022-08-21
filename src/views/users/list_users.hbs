@@ -1,0 +1,98 @@
+<div class="container">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Modificar</th>
+      <th scope="col">  Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each employed_list}}
+    <tr>
+      <th scope="row">{{id_empleado}}</th>
+      <td>{{nombre}}</td>
+      <td>{{apellido}}</td>
+      <td>{{edad}}</td>
+      <td>
+        <!-- Button Update modal -->
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#updateteemployed{{id_empleado}}">
+            Modificar
+          </button>
+
+          <!--Update Modal -->
+          <div class="modal fade" id="updateteemployed{{id_empleado}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modificar dato</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">                                            
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card text-center">
+                        <form action="/setusers/update_employees/{{id_empleado}}" method="post">
+                          <div class="form-group">
+                            <h5 class="card-title">Actualizacion de  usuarios</h5>
+                            <label class="form-label">nombre</label>
+                             <input type="text" class="form-control" value={{nombre}} name="nombre" placeholder="nombre" autofocus required/>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">apellido</label>
+                            <input type="text" class="form-control" value={{apellido}} name="apellido" placeholder="apellido"  required/>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label">edad</label>
+                            <input type="edad" class="form-control" value={{edad}} name="edad" placeholder="edad"  required/>
+                          </div>                                 
+                        </div>
+                       </div>
+                     </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Modificar</button>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </td>   
+      <td>
+          <!-- Delete Button modal -->
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteemployed{{id_empleado}}">
+            Eliminar
+          </button>
+
+          <!--Delete Modal -->
+          <div class="modal fade" id="deleteemployed{{id_empleado}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Eliminar dato</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  está seguro de quitar de la lista a  {{nombre}}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <a class="btn btn-danger" href="delete_employees/{{id_empleado}}" role="button">Eliminar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>

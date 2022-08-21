@@ -1,0 +1,45 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">  
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card text-center">
+                            <form action="/setusers/completed_register" method="post">
+                                <div class="form-group">
+                                    <h5 class="card-title">Completa tu registro {{user.username}}  </h5>
+                                    <label class="form-label">Nombres</label>
+                                    <input type="text" class="form-control" name="nombre" placeholder="nombre" autofocus required/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" name="apellido" placeholder="apellido"  required/>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="form-label">Direccion</label>
+                                    <input type="text" class="form-control" name="direccion" placeholder="direccion"  required/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">edad</label>
+                                    <input type="edad" class="form-control" name="edad" placeholder="edad"  required/> 
+                                </div>
+                                 <div class="form-group">                    
+                                    <label>Programa</label><br>
+                                    <select name="id_programa" class="btn btn-success ">
+                                        {{#each program_list}} "
+                                    <option value="{{id_programa}}" selected>{{programa}}</option> 
+                                        {{/each}}
+                                    </select>                             
+                                 </div>
+                                 <input type="hidden" name="id_usuario" value="{{user.id}}"/>
+                                <div class="form-group">
+                                    <label class="form-label"> </label><br>
+                                    <button class="btn btn-primary btn-block" type="submit">Enviar</button><br>
+                                    <label class="form-label"> </label><br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>   
+        </div>
+    </div>
+</div>

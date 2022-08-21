@@ -1,0 +1,29 @@
+<div class="container p-4"> 
+     <div class="p-3 mb-2 bg-secondary text-white" style="--bs-bg-opacity: 0.9;">
+         <p class="text-start"><a href="/signingestionhumana" class="btn btn-success">Volver</a></p>
+         <p class="text-center"><h3>Formatos Talento Humano</h3></p><br>
+         <div class="table-responsive-sm">
+            <table class="table bg-secondary text-white"  style="--bs-bg-opacity: 0.9;">
+                <caption>List of users</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Accion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {{#each a}}
+                    <tr>
+                      <th scope="row">{{@index}}</th>
+                      <td>{{this}}</td>
+                      <td><a class="btn btn-danger" href="/docente/descargar/{{this}}" role="button">Descargar</a></td>
+                    </tr>
+                  </tbody>
+                  {{/each}}
+             </table>
+        </div>
+     </div>
+</div>
+
+

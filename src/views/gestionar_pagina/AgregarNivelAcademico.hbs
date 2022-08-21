@@ -1,0 +1,126 @@
+<div class="container p-4">
+    <p class="text-start"><a href="/administrador/gestionar_pagina" class="btn btn-success">Volver</a></p>
+    <p>
+        <a class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Nivel Académico</a>
+    </p>
+    <div class="row">
+    <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="card text-center bg-success text-white" style="--bs-bg-opacity: 0.9;">
+                        <div class="card-body">
+                            <form action="/administrador/agregarNivelAcademicoPost" method="post">
+                                <h5 class="card-title fw-bold">Agregar Nivel Academico</h5>
+                                <img src="/img/logo_fet.jpg" alt="Fet" class="card-img-top mx-auto m-2 rounded-circle w-50"> 
+                                <div class="form-group">
+                                    <input type="hidden">
+                                    <label class="form-label">Nivel academico</label>
+                                    <input type="text" class="form-control" name="Academico" style='text-transform:uppercase' autofocus required/>
+                                </div>      
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label class="form-label"> </label><br>
+                                        <button class="btn btn-secondary" type="submit">Guardar</button><br>
+                                        <label class="form-label"> </label><br>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body text-white bg-secondary mb-3">
+            <div class="table-responsive-sm">
+                <table class="table text-white">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nivel Academico</th>
+                            <th scope="col">Modificar</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+                  </thead>
+          <tbody>
+            {{#each nivel_academico}} 
+            <tr>
+              <th scope="row">{{id_Nivel_Aca}}</th>
+                <td>{{Academico}}</td>
+              <td>
+                <!-- Button Update modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modificarnivelnivelacademico{{id_Nivel_Aca}}">
+                Modificar
+                </button>
+        
+                <!--Update Modal -->
+                <div class="modal fade" id="modificarnivelnivelacademico{{id_Nivel_Aca}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                ||<div class="modal-dialog modal-xl">
+                      <div class="modal-content bg-success text-white" style="--bs-bg-opacity: 0.9;">      
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modificar dato</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">                                            
+                          <div class="card">
+                            <div class="card-body  bg-success text-white" style="--bs-bg-opacity: 0.9;">
+                              <div class="card text-center bg-success text-white" style="--bs-bg-opacity: 0.9;">
+                                <form action="/administrador/modificarnivelacademicoPost/{{id_Nivel_Aca}}" method="post"  class="row g-3">
+                                  <label for="exampleFormControlInput1" class="form-label">Configurar dato nivel academico</label>
+                                  <div class="col-md-4">
+                                    <label for="validationDefault01" class="form-label">Nivel academico</label>
+                                    <input type="text" class="form-control" name="Academico" value="{{Academico}}" placeholder="nombre" style="text-transform:uppercase" autofocus required/>
+                                  </div>                                           
+                                </div>
+                               </div>
+                             </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="submit" class="btn btn-primary">Modificar</button>
+                          </form>
+                        </div>
+        
+                      </div>
+                    </div>
+                  </div>
+              </td>   
+              <td>
+                 
+                  <!-- Delete Button modal -->
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteemployed{{id_Nivel_Aca}}">
+                    Eliminar
+                  </button>
+        
+                  <!--Delete Modal -->
+                  <div class="modal fade" id="deleteemployed{{id_Nivel_Aca}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-success text-white" style="--bs-bg-opacity: 0.9;">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Eliminar dato</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          ¿Quitar de la BD a {{Academico}} ?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <a class="btn btn-danger" href="/administrador/eliminarnivelacademico/{{id_Nivel_Aca}}" role="button">Eliminar</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>  
+      </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
